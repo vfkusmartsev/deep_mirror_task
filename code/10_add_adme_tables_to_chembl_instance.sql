@@ -1,0 +1,7 @@
+CREATE TABLE adme_predictions(
+    id SERIAL PRIMARY KEY
+    drug_id VARCHAR(20) REFERENCES MOLECULE_DICTIONARY(CHEMBL_ID) NOT NULL
+    drug_smile VARCHAR(1000)
+    predicted_value NUMERIC
+
+)
