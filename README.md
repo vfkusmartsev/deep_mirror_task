@@ -26,6 +26,21 @@ Section 1.0: Create ChEMBL Database Instance (Time spent = 1hr)
 		-- `GRANT SELECT ON chembl_31 TO name`
 		-- NB if extra permissions are required can add them in the same way
 
+Section 1.01: Cloud-host the ChEMBL instance - AWS RDS (2hr):
+	- Had to make sure all the security group, internet gateways, subnet routes, and VPCs were currently configured.
+	- Can now connect using this command:
+	`psql \                                                    
+   --host=chembl-31.cxkbhq0cyqwz.eu-west-2.rds.amazonaws.com \
+   --port=5432 \
+   --username=postgres \
+   --password \
+   --dbname=chembl_31`
+
+	- To build db there was a "no 'user' role exists" error
+	- Running with --no-owner the build command seems to have eleviated the error message, but I wonder if that affects the security of the db. Also, it said many of the tables already exist, so now I need to check if there are empty, incorrectly constructed tables.
+	- Ran it with 20Gb on the RDS server, but the script broke saying "out of storage space". On my local machine it says the ChEMBL database is 19.2GB.
+
+
 
 Section 1.1: Add ADME data from TDC
 	- Data from https://tdcommons.ai/single_pred_tasks/adme/
@@ -35,7 +50,8 @@ Section 1.1: Add ADME data from TDC
 
 
 Section 2.0: Generate Quickstart Instructions
-
+	- ChEMBL Schemas here: `https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/`
+	- 
 
 Notes:
 
