@@ -29,7 +29,7 @@ Instructions
    Depending on your database setup you may not need the host and port
    arguments.
 
-    $> pg_restore --no-owner -h HOST -p 5432 -U vkusmartsev -d chembl_31 chembl_31_postgresql.dmp
+    $> pg_restore --no-owner -h chembl-31.cxkbhq0cyqwz.eu-west-2.rds.amazonaws.com -p 5432 -U postgres -d chembl_31 ./chembl_31_postgresql.dmp
 
 3. After which, log it using `psql chembl_31`
 
