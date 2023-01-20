@@ -30,12 +30,7 @@ Section 1.0: Create ChEMBL Database Instance (Time spent = 1hr)
 Section 1.01: Cloud-host the ChEMBL instance - AWS RDS (Time spent = 2hr):
 - Had to make sure all the security group, internet gateways, subnet routes, and VPCs were currently configured.
 - Can now connect using this command:
-	`psql \                                                    
-	--host=chembl-31.cxkbhq0cyqwz.eu-west-2.rds.amazonaws.com \
-	--port=5432 \
-	--username=postgres \
-	--password \
-	--dbname=chembl_31`
+	`psql --host=chembl-31.cxkbhq0cyqwz.eu-west-2.rds.amazonaws.com --port=5432 --username=postgres --password --dbname=chembl_31`
 
 - To build db there was a "no 'user' role exists" error
 - Running with --no-owner the build command seems to have eleviated the error message, but I wonder if that affects the security of the db. Also, it said many of the tables already exist, so now I need to check if there are empty, incorrectly constructed tables.
@@ -59,12 +54,7 @@ Section 2.0: Generate Quickstart Instructions
 - ChEMBL Schemas here: `https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/`
 - Email me to add you as a user of the DB
 - Login to the DB using:
-`psql \                                                    
---host=chembl-31.cxkbhq0cyqwz.eu-west-2.rds.amazonaws.com \
---port=5432 \
---username=<user> \
---password \
---dbname=chembl_31`
+`psql --host=chembl-31.cxkbhq0cyqwz.eu-west-2.rds.amazonaws.com --port=5432 --username=<user> --password --dbname=chembl_31`
 - The password being 'changeme' to start; to change password type once into psql server:
 	`ALTER USER <user> WITH PASSWORD '<new_password>';`
 
