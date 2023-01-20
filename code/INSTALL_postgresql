@@ -31,11 +31,7 @@ Instructions
 
     $> pg_restore --no-owner -h chembl-31.cxkbhq0cyqwz.eu-west-2.rds.amazonaws.com -p 5432 -U postgres -d chembl_31 ./chembl_31_postgresql.dmp
 
-3. After which, log it using `psql chembl_31`
-
-
-Notes:
-   Tried to connect using the following command:
+3. After which, log it using:
    ```
    psql \
    --host=chembl-31.cxkbhq0cyqwz.eu-west-2.rds.amazonaws.com \
@@ -45,4 +41,4 @@ Notes:
    --dbname=chembl-31
    ```
 
-   With <> replaced with the username, but didn't seem to work.
+   With <> replaced with the username
